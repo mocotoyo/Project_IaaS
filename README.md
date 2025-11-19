@@ -24,21 +24,24 @@ Antes de comenzar, debes tener instalado:
 
 ## 🗂️ Estructura del proyecto
 
-├── app/ # Aplicación (web/API)
-│ ├── src/
-│ ├── tests/ # Prueba unitaria
-│ └── requirements.txt # Dependencias (ejemplo)
-│
-├── terraform/ # Infraestructura como código
-│ ├── main.tf
-│ ├── variables.tf
-│ └── outputs.tf
-│
-├── ansible/
-│ ├── inventory
-│ ├── playbook.yml
-│ └── roles/
-│ └── deploy/
-│ └── tasks/main.yml
-│
-└── README.md
+.
+├── Jenkinsfile
+├── Proyecto_\ Despliegue\ de\ Aplicaci\363n\ con\ Terraform\ y\ Ansible.pdf
+├── README.md
+├── ansible
+│   ├── inventory
+│   └── playbook.yml
+├── app
+│   ├── __pycache__
+│   │   └── main.cpython-310.pyc
+│   ├── main.py
+│   ├── requirements.txt
+│   └── tests
+│       ├── __pycache__
+│       │   └── test_basic.cpython-310.pyc
+│       └── test_basic.py
+└── terraform
+    ├── main.tf
+    ├── mainaws.tf
+    ├── terraform.tfstate
+    └── variables.tf
