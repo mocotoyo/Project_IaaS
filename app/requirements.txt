@@ -1,0 +1,2 @@
+flask
+gunicorn # Servidor WSGI para producción
