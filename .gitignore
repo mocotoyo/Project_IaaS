@@ -1,0 +1,6 @@
+# Ignorar carpetas de Terraform descargadas
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
