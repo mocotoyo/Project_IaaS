@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Project_IaaS
 =======
 # Proyecto de Despliegue con Terraform + Ansible
@@ -43,4 +42,3 @@ Antes de comenzar, debes tener instalado:
 │ └── tasks/main.yml
 │
 └── README.md
->>>>>>> 72110d2 (Primer commit del proyecto)
