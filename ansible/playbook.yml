@@ -1,0 +1,47 @@
+---
+- name: Despliegue de Aplicación Web
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Asegurar que Python esté instalado
+      apt:
+        name: python3
+        state: present
+
+    - name: Instalar Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Instalar pip3
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: Instalar Docker Compose (si se usa)
+      pip:
+        name: docker-compose
+        state: present
+
+    - name: Copiar el código de la aplicación y Dockerfile (asume un Dockerfile)
+      copy:
+        src: ../app
+        dest: /tmp/app_deployment
+
+    - name: Construir la imagen de Docker
+      community.docker.docker_image:
+        name: mi-app-web
+        build:
+          path: /tmp/app_deployment/app
+        source: build
+        state: present
+
+    - name: Desplegar el contenedor de la aplicación
+      community.docker.docker_container:
+        name: mi_app_running
+        image: mi-app-web:latest
+        ports:
+          - "80:5000"
+        state: started
+        restart_policy: always
